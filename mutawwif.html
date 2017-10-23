@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mutawwif Data</title>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+     <link href="css/back.css" rel="stylesheet">
+</head>
+<body>
+<STYLE TYPE="text/css">
+
+td{font-family:  Joker; font-size: 40px; text-align: center;}
+th{font-family:  Arial Black; font-size: 50px; text-align: center;}
+
+</STYLE>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <table border=1 width="80%" align="center" height="80%" bgcolor="e6ffff" >
+          <thead>
+              <tr>
+                  <th bgcolor="white">NAMA</th>
+                  <th bgcolor="white">BILIK</th>
+                  <th bgcolor="white">NO TELEFON</th> 
+              </tr>
+          </thead>
+          <tbody id="table_body">
+             
+          </tbody>
+      </table>       
+
+      <script type="text/javascript">
+        
+        alert("Sila tunggu");
+        var rootRef = firebase.database().ref().child("MUTAWWIF");
+
+        rootRef.on("child_added", snap =>{
+
+            var hp = snap.child("HP").val();
+            var name = snap.child("NAME").val();
+            var room = snap.child("ROOM").val();
+
+            $("#table_body").append("<tr><td>"+ name + "</td><td>" + room + 
+              "</td><td>" + hp + "</td></tr>");
+
+        });
+
+      </script>
+  <br><br><br><br><br><br><br>
+		<form action="index.html">
+		<center>
+				 <button class="button back" style="vertical-align:middle"><span>KEMBALI </span></button>
+			</form>
+		</center>
+
+</body>
+</html>

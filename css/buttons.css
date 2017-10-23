@@ -1,0 +1,103 @@
+.button1 {
+  display: inline-block;
+  
+     
+    font-size: 100px;
+    width: 470px;
+    height: 270px;
+
+    text-align: center;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #111;
+    background-color: #00ffff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.button1:hover {background-color: #008080}
+
+.button1:active {
+  background-color: #008080;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button2 {
+  display: inline-block;
+  
+    font-size: 100px;
+    width: 470px;
+    height: 270px;
+
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #111;
+  background-color: #00ffff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.button2:hover {background-color: #008080}
+
+.button2:active {
+  background-color: #008080;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+.button3 {
+  display: inline-block;
+  
+    padding: 30px;
+    font-size: 30px;
+    width: 200px;
+    height: 100px;
+
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #111;
+  background-color: #00ffff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+
+.button3:hover {background-color: #008080}
+
+.button3:active {
+  background-color: #008080;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#sesat {
+        display: block;
+        position: relative;
+        margin: 0px auto;
+        top: 500px;
+        width: 50%;
+        height: 40px;
+
+        border: none;
+        border-radius: 3px;
+        font-size: 20px;
+        text-align: center;
+        color: black;
+        background: cyan;
+    }
+#sesat:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
