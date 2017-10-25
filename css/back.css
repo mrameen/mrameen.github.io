@@ -3,11 +3,6 @@
 .back {
 
     display: inline-block;
-  
-    font-size: 100px;
-    width: 470px;
-    height: 270px;
-
     cursor: pointer;
     text-align: center;
     text-decoration: none;
