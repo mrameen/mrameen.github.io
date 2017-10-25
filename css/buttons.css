@@ -83,8 +83,9 @@
         display: block;
         position: relative;
         margin: 0px auto;
-        top: 100px;
-
+        bottom: 0px;
+        width: 50%;
+        height: 40px;
 
         border: none;
         border-radius: 3px;
