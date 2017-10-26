@@ -1,10 +1,11 @@
- // Initialize Firebase
+
+  // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyBmPiUDFjXW4Dij_Ke6WdiTFEUTxRqTfYs",
-    authDomain: "database-e-pilgrim.firebaseapp.com",
-    databaseURL: "https://database-e-pilgrim.firebaseio.com",
-    projectId: "database-e-pilgrim",
+    apiKey: "AIzaSyAt024MrvhPHqQ7UFPw2DvEk0HCpkDhFaA",
+    authDomain: "pilgrims-database.firebaseapp.com",
+    databaseURL: "https://pilgrims-database.firebaseio.com",
+    projectId: "pilgrims-database",
     storageBucket: "",
-    messagingSenderId: "1006356553834"
+    messagingSenderId: "426442286486"
   };
   firebase.initializeApp(config);
