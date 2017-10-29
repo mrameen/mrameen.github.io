@@ -4,31 +4,37 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-     <link href="css/buttons.css" rel="stylesheet">
- 
 <title>LOKASI</title>
+	<link href="css/buttons.css" rel="stylesheet">
+	<link href="css/radionfont.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+	<script src="js/firebase.js"></script>
+	 
+
 
 	<script type="text/javascript">
 		
 		function notify(){
+				var name = prompt("Masukkan Nama: ");
 
-			var name = prompt("Masukkan Nama: ");
+			    var database = firebase.database();
 
-		    var database = firebase.database();
+			        var ref = database.ref('MEMINTA LOKASI');
 
-		    var ref = database.ref('MEMINTA LOKASI MUTAWWIF');
+			        var data = {
+			          NAME: name,
+			        }
+			        ref.push(data);
 
-		        var data = {
-		          NAME: name,
-		     	}
-			 ref.push(data);
 			alert("Sila tunggu "+name+", Mutawwif akan menghantar lokasi sebentar lagi.");
 		}
 
 
 	</script>
 </head>
+
+
 <body align="middle" bgcolor= "white">
 	<br><br>
 	<br><br>
@@ -41,14 +47,12 @@
 	</tr>
 	<tr>
 		<td><br><br>
-		<form name="frm">
-			 <div class="button3" input type="button" onclick="notify()" align="center" value='HANTAR'>
-				 	TERIMA LOKASI
-				 </div>				 
-			</td>
-
+			 <div class="button1" input type="button" onclick="notify()" align="center" value='HANTAR'>
+				 	HANTAR
+				 </div>	
+		</td>
 	</tr>
-</table>
+	</table>
 
 	
 	<form action="index.html">
