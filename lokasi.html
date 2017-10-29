@@ -13,7 +13,17 @@
 		
 		function notify(){
 
-			alert("Sila tunggu, Mutawwif akan menghantar location sebentar lagi.");
+			var name = prompt("Masukkan Nama: ");
+
+		    var database = firebase.database();
+
+		    var ref = database.ref('MEMINTA LOKASI MUTAWWIF');
+
+		        var data = {
+		          NAME: name,
+		     	}
+			 ref.push(data);
+			alert("Sila tunggu "+name+", Mutawwif akan menghantar lokasi sebentar lagi.");
 		}
 
 
@@ -32,8 +42,10 @@
 	<tr>
 		<td><br><br>
 		<form name="frm">
-			<button class="button button3" style=" font-family: joker" onclick="notify()">TERIMA LOKASI</button>
-		</form></td>
+			 <div class="button3" input type="button" onclick="notify()" align="center" value='HANTAR'>
+				 	TERIMA LOKASI
+				 </div>				 
+			</td>
 
 	</tr>
 </table>
