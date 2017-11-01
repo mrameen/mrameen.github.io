@@ -1,0 +1,101 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>TYPE OF SICK</title>
+	<link href="css/buttons.css" rel="stylesheet">
+	<link href="css/radionfont.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+	<script type="text/javascript">
+
+
+		function sick(){
+
+			var hh = "Null";
+				if(document.frm.o[0].checked)
+			    {
+			    	hh = document.frm.o[0].value;
+				}
+				else if(document.frm.o[1].checked)
+			    {
+					hh = document.frm.o[1].value;
+				}
+				else if(document.frm.o[2].checked)
+			    {
+					hh = document.frm.o[2].value;
+				}
+				else if(document.frm.o[3].checked)
+			    {
+			    	hh = prompt("Anda sakit apa ? ");
+				}
+				else
+			    {
+					alert("Sila pilih senarai di atas");
+					document.frm.o.focus();
+				}
+				var name = prompt("Masukkan Nama: ");
+
+				alert("Nama: "+name+"\r\n"+"Jenis Sakit: "+hh);
+
+			    var database = firebase.database();
+
+			        var ref = database.ref('LAPORAN JEMAAH SAKIT');
+
+			        var data = {
+			          NAME: name,
+			          SICK: hh,
+			        }
+			        ref.push(data);
+		}
+
+	</script>
+	<script src="js/firebase.js"></script>
+	
+</head>
+
+<body align="center" bgcolor="#ccf5f5">
+
+	<form name="frm" >
+	<table  width=100% align="center" height="60%" border="0">
+
+		<tr>
+			<td align="center"  ><p>ANDA SAKIT APA ?</p></td>
+		</tr>
+		<tr>
+			<td width="80%" ><br><br><label class="container">DEMAN<input type="radio" name="o" value="DEMAN"><span class="checkmark"></span></label></td>
+		</tr>
+		<tr>
+			<td><label class="container">BATUK<input type="radio" name="o" value="BATUK"><span class="checkmark"></span></label></td>
+		</tr>
+		<tr>
+			<td><label class="container">SAKIT JANTUNG<input type="radio" name="o" value="SAKIT JANTUNG"><span class="checkmark"></span></label></td>
+		</tr>
+		<tr>
+			<td><label class="container">LAIN-LAIN<input type="radio" name="o"><span class="checkmark"></span></label></td>
+		</tr>
+	
+		<tr>
+			<td align="center" colspan="2"><br>
+				 <div class="button1" input type="button" onclick="sick()" align="center" value='HANTAR'>
+				 	HANTAR
+				 </div>				 
+			</td>
+		</tr>
+	</table>
+	</form>		
+
+
+	<br><br>
+	<form action="index.html">
+<center>
+		 <input type="image" src="back.png" alt="Submit" width="50%" height="28%">
+	</form>
+</center>
+
+</font>
+</body>
+</html>
