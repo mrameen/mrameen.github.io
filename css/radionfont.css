@@ -58,11 +58,11 @@ p {
 
 /* Style the indicator (dot/circle) */
 .container .checkmark:after {
- 	top: 14px;
-	left: 18px;
-	width: 15px;
-	height: 15px;
-	border-radius: 50%;
+ 	top: 9.5px;
+	left: 9.8px;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
 	background: white;
 }
 
