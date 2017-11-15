@@ -55,9 +55,10 @@
 .button3 {
   display: inline-block;
 
-     font-size: 40px;
+     font-size: 32px;
     width: 200px;
     height: 90px;
+
 
   cursor: pointer;
   text-align: center;
