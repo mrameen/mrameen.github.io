@@ -79,22 +79,45 @@
 }
 
 #sesat {
+        background-color: #00ffff;
         display: block;
         position: relative;
         margin: 0px auto;
         top: 0px;
         width: 50%;
         height: 40px;
-        border: 3px solid turquoise;
+        
 
         border-radius: 3px;
         font-size: 20px;
         text-align: center;
         color: black;
-        background: cyan;
+     
     }
 #sesat:active {
-  background-color: #3e8e41;
+  background-color: Transparent;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#sesat2{
+        background-color: #ccffff ;
+        display: block;
+        position: relative;
+        margin: 0px auto;
+        top: 0px;
+        width: 50%;
+        height: 40px;
+        
+
+        border-radius: 3px;
+        font-size: 20px;
+        text-align: center;
+        color: black;
+     
+    }
+#sesat2:active {
+  background-color: Transparent;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
