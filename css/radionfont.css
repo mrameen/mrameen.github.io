@@ -1,8 +1,5 @@
 
-p {
-	font-size: 30px;
-	font-family:Arial Black;
-}
+
 
 .container {
     display: block;
@@ -10,7 +7,7 @@ p {
     padding-left: 70px;
     margin-bottom:40px;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 20px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -28,8 +25,8 @@ p {
     position: absolute;
     top: 0;
     left: 0;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     background-color: #eee;
     border-radius: 50%;
 }
@@ -58,10 +55,10 @@ p {
 
 /* Style the indicator (dot/circle) */
 .container .checkmark:after {
- 	top: 9.5px;
-	left: 9.8px;
-	width: 30px;
-	height: 30px;
+ 	top: 4.5px;
+	left: 5px;
+	width: 20px;
+	height: 20px;
 	border-radius: 100%;
 	background: white;
 }
