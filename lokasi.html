@@ -1,58 +1,133 @@
 <!DOCTYPE html>
-<html>
-<head >
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>E-PILGRIMS SYSTEM</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LOKASI</title>
-	<link href="css/buttons.css" rel="stylesheet">
-	<link href="css/radionfont.css" rel="stylesheet">
+    <link href="css/buttons.css" rel="stylesheet">
+    <link href="css/radionfont.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-	<script src="js/firebase.js"></script>
-	 
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    <script src="js/firebase.js"></script>
+     
 
 
-	<script type="text/javascript">
-		
-		function notify(){
-				var name = prompt("Masukkan Nama: ");
+    <script type="text/javascript">
+        
+        function notify(){
+                var name = prompt("Masukkan Nama: ");
 
-			    var database = firebase.database();
+                var database = firebase.database();
 
-			        var ref = database.ref('MEMINTA LOKASI');
+                    var ref = database.ref('MEMINTA LOKASI');
 
-			        var data = {
-			          NAME: name,
-			        }
-			        ref.push(data);
+                    var data = {
+                      NAME: name,
+                    }
+                    ref.push(data);
 
-			alert("Sila tunggu "+name+", Mutawwif akan menghantar lokasi sebentar lagi.");
-		}
-
-
-	</script>
-</head>
+            alert("Sila tunggu "+name+", Mutawwif akan menghantar lokasi sebentar lagi.");
+        }
 
 
-<body align="middle" bgcolor="#ccf5f5">
-	<br><br>
-	<br><br>
-	<table align="center">
-	<tr>
-		<form action="lokasimutawiff.html">
-			<td><button class="button button3" style=" font-family: joker " >PETA LOKASI</button>
-		</form></td>
-		
-	</tr>
-	<tr>
-		<td><br><br>
-			 <div class="button3" input type="button" onclick="notify()" align="center" value='MEMINTA LOKASI'>
-				 	MINTA LOKASI
-				 </div>	
-		</td>
-	</tr>
-	</table>
+    </script>
+  </head>
 
-</body>
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Selamat Datang Jemaah Haji</a>
+        
+        
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+
+
+
+        <br><br>
+
+
+                <form action="lokasimutawiff.html">
+                    <button class="button button3" style="  font-family: Times New Roman; " >PETA LOKASI</button>
+                </form>
+
+				<br><br>
+                     <div class="button3" input type="button" onclick="notify()" style="  font-family: Times New Roman; " value='MEMINTA LOKASI'>
+                            MINTA LOKASI
+                         </div> 
+
+
+
+        </div>
+      </div>
+    </header>
+
+
+  
+
+    <!-- Footer -->
+    <footer class="text-center">
+      
+      <div class="footer-below">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              Copyright &copy; by Mr Ameen 2017
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top d-lg-none">
+      <a class="btn btn-primary js-scroll-trigger" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+
+  </body>
+
 </html>
