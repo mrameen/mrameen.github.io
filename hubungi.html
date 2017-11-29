@@ -13,19 +13,28 @@
 
 </head>
 <body bgcolor="#ccf5f5">
-<STYLE TYPE="text/css">
 
-td{font-family:  Joker; font-size: 20px; text-align: center;}
-th{font-family:  Arial Black; font-size: 20px; text-align: center;}
+  <style>
+      table {
+          border-collapse: collapse;
+          width: 100%;
+         
+      }
 
-</STYLE>
+      th, td {
+          text-align: center;
+          padding: 10px;
+      }
 
-      <table width="95%" align="center" height="80%" bgcolor="b2f0f1" >
+      tr:nth-child(even){background-color: #f2f2f1}
+    </style>
+
+      <table width="95%" align="center" height="80%" border="1">
           <thead>
               <tr>
-                  <th bgcolor="#66e1e3" width="50%">NAMA</th>
-                  <th bgcolor="#66e1e3" width="10%">BILIK</th>
-                  <th bgcolor="#66e1e3" width="35%">NO TELEFON</th> 
+                  <th  width="50%">NAMA</th>
+                  <th  width="10%">BILIK</th>
+                  <th  width="35%">NO TELEFON</th> 
               </tr>
           </thead>
           <tbody id="table_body">
