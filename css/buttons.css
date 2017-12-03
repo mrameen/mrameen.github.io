@@ -69,12 +69,12 @@
         position: relative;
         margin: 0px auto;
         top: 0px;
-        width: 50%;
+        width: 40%;
         height: 40px;
         
 
         border-radius: 3px;
-        font-size: 20px;
+        font-size: 15px;
         text-align: center;
         color: black;
      
@@ -83,26 +83,3 @@
   background-color: Transparent;
   transform: translateY(4px);
 }
-
-#sesat2{
-        background-color: white;
-        font-family: Times New Roman;
-        display: block;
-        position: relative;
-        margin: 0px auto;
-        top: 0px;
-        width: 50%;
-        height: 40px;
-        
-
-        border-radius: 3px;
-        font-size: 20px;
-        text-align: center;
-        color: black;
-     
-    }
-#sesat2:active {
-  background-color: Transparent;
-  transform: translateY(4px);
-}
-
