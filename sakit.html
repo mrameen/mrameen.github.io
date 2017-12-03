@@ -35,7 +35,6 @@
   <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
   <script type="text/javascript">
 
-
     function sick(){
 
       var hh = "Null";
@@ -63,17 +62,16 @@
         var name = prompt("Masukkan Nama: ");
 
         if(name=="")
-                {
-                  alert("Sila Masukkan Nama Anda");
-                  return false;
-                }
+        {
+          alert("Sila Masukkan Nama Anda");
+          return false;
+        }
 
         alert("Nama: "+name+"\r\n"+"Jenis Sakit: "+hh);
 
-          var database = firebase.database();
-
+              var database = firebase.database();
               var ref = database.ref('LAPORAN JEMAAH SAKIT');
-
+             
               var data = {
                 NAME: name,
                 SICK: hh,
@@ -134,7 +132,9 @@
           
             <tr>
               <td align="center" colspan="2">
-                 <button class="button button1"" onclick="sick()" value='HANTAR' >HANTAR</button>     
+                 <div class="button1" input type="button" onclick="sick()" align="center" value='HANTAR'>
+                  HANTAR
+                 </div>   
               </td>
             </tr>
           </table>
