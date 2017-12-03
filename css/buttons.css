@@ -61,9 +61,8 @@
 }
 
 
-
 #sesat {
-        background-color: white;
+        background-color: #00ffff;
         display: block;
         position: relative;
         margin: 0px auto;
@@ -73,12 +72,13 @@
         
 
         border-radius: 3px;
-        font-size: 12px;
+        font-size: 20px;
         text-align: center;
         color: black;
      
     }
 #sesat:active {
   background-color: Transparent;
+  box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
