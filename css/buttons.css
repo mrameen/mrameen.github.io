@@ -11,20 +11,13 @@
     text-align: center;
     text-decoration: none;
     outline: none;
-    color: #111;
-    background-color: #00ffff;
+
+    background-color: #464A52;
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #999;
 }
 
-.button1:hover {background-color: #008080}
 
-.button1:active {
-  background-color: #008080;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
 
 .button2 {
   display: inline-block;
@@ -41,14 +34,6 @@
   background-color: #00ffff;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
-.button2:hover {background-color: #008080}
-
-.button2:active {
-  background-color: #008080;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
 }
 
 
@@ -68,14 +53,12 @@
   background-color: #00ffff;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
 }
 
 .button3:hover {background-color: #008080}
 
 .button3:active {
   background-color: #008080;
-  box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
@@ -97,7 +80,6 @@
     }
 #sesat:active {
   background-color: Transparent;
-  box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
@@ -119,8 +101,6 @@
     }
 #sesat2:active {
   background-color: Transparent;
-  box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-
 

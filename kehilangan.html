@@ -62,7 +62,11 @@
           document.frm.o.focus();
         }
         var name = prompt("Masukkan Nama: ");
-
+         if(name=="")
+                {
+                  alert("Sila Masukkan Nama Anda");
+                  return false;
+                }
         alert("Nama: "+name+"\r\n"+"Jenis Barang: "+hh);
 
           var database = firebase.database();
@@ -108,8 +112,6 @@
 
     <!-- Header -->
     <header class="masthead">
-      <div class="container">
-        <div class="intro-text">
 
 
           <h1><u><font color="black">LAPORAN BARANG HILANG</u></h1></font>
@@ -143,8 +145,6 @@
         </font>
 
 
-        </div>
-      </div>
     </header>
 
 
@@ -157,7 +157,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              Copyright &copy; by Mr Ameen 2017
+              Copyright &copy; @meen69
             </div>
           </div>
         </div>

@@ -38,6 +38,11 @@
         function notify(){
                 var name = prompt("Masukkan Nama: ");
 
+                if(name=="")
+                {
+                  alert("Sila Masukkan Nama Anda");
+                  return false;
+                }
                 var database = firebase.database();
 
                     var ref = database.ref('MEMINTA LOKASI');
@@ -67,11 +72,6 @@
 
     <!-- Header -->
     <header class="masthead">
-      <div class="container">
-        <div class="intro-text">
-
-
-
         <br><br>
 
 
@@ -80,14 +80,8 @@
                 </form>
 
 				<br><br>
-                     <div class="button3" input type="button" onclick="notify()" style="  font-family: Times New Roman; " value='MEMINTA LOKASI'>
-                            MINTA LOKASI
-                         </div> 
 
-
-
-        </div>
-      </div>
+         <button class="button button3" style="  font-family: Times New Roman; " onclick="notify()" style="  font-family: Times New Roman; " value='MEMINTA LOKASI' >MINTA LOKASI</button>
     </header>
 
 
@@ -100,7 +94,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              Copyright &copy; by Mr Ameen 2017
+              Copyright &copy; @meen69
             </div>
           </div>
         </div>
