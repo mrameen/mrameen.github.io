@@ -38,5 +38,6 @@ if (navigator.geolocation) {
       }
       ref.push(data);
       alert("Lokasi anda telah sampai kepada Mutawwif. Jangan bergerak lebih jauh!");
+      window.location.replace("index.html");
     }
 }

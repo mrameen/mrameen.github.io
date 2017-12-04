@@ -69,14 +69,16 @@
 
         alert("Nama: "+name+"\r\n"+"Jenis Sakit: "+hh);
 
-              var database = firebase.database();
-              var ref = database.ref('LAPORAN JEMAAH SAKIT');
-             
-              var data = {
-                NAME: name,
-                SICK: hh,
-              }
-              ref.push(data);
+        var database = firebase.database();
+        var ref = database.ref('LAPORAN JEMAAH SAKIT');
+       
+        var data = {
+          NAME: name,
+          SICK: hh,
+        }
+        ref.push(data);
+        alert("Data anda telah disimpan didalam database");
+        window.location.replace("index.html");
     }
 
   </script>
