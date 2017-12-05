@@ -90,8 +90,9 @@
             var name = snap.child("NAME").val();
             var room = snap.child("ROOM").val();
 
+
             $("#table_body").append("<tr><td  bgcolor='#004032'>"+ name + "</td><td  bgcolor='#004032'>" + room + 
-              "</td><td  bgcolor='#004032'>" +"<a text-decoration : none; color : #000; href='tel:+6"+hp+"'>" +hp+ "</a>" + "</td></tr>");
+              "</td><td  bgcolor='#004032'>" +"<a href='tel:+6"+hp+"'><font color='white'>" +hp+ "</a></font>" + "</td></tr>");
 
         });
 
