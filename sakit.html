@@ -24,19 +24,21 @@
 
     
 
-   <meta charset="utf-8">
+    <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>TYPE OF SICK</title>
   <link href="css/buttons.css" rel="stylesheet">
   <link href="css/radionfont.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+  <script src="js/firebase.js"></script>
+
   <script type="text/javascript">
 
-    function sick(){
-
+    var database = firebase.database();
+    function add(){
+      
       var hh = "Null";
         if(document.frm.o[0].checked)
           {
@@ -60,30 +62,29 @@
           document.frm.o.focus();
         }
         var name = prompt("Masukkan Nama: ");
-
-        if(name=="")
-        {
-          alert("Sila Masukkan Nama Anda");
-          return false;
-        }
-
+         if(name=="")
+                {
+                  alert("Sila Masukkan Nama Anda");
+                  return false;
+                }
         alert("Nama: "+name+"\r\n"+"Jenis Sakit: "+hh);
 
-        var database = firebase.database();
-        var ref = database.ref('LAPORAN JEMAAH SAKIT');
-       
-        var data = {
-          NAME: name,
-          SICK: hh,
-        }
-        ref.push(data);
-        alert("Data anda telah disimpan didalam database");
-        window.location.replace("index.html");
+          
+          var ref = database.ref('LAPORAN JEMAAH SAKIT');
+
+          var data = {
+            NAME: name,
+            STUFF: hh,
+          }
+          ref.push(data);
+          if(data!=""){
+            alert("Data anda telah disimpan didalam database");
+            window.location.replace("index.html");
+          }
     }
 
   </script>
-  <script src="js/firebase.js"></script>
-  
+
   <style>
     h1 { 
         display: block;
@@ -96,6 +97,7 @@
         font-weight: bold;
     }
   </style>
+  
 
 
   </head>
@@ -114,10 +116,11 @@
     <!-- Header -->
     <header class="masthead">
 
+
           <h1><u><font color="black">ANDA SAKIT APA?</u></h1></font>
-          
-          <form name="frm" onsubmit="return false">
-          <table align="center" border="0" width="50%" height="20%">
+
+          <form name="frm" onsubmit="return false" >
+          <table  align="center" height="20%" border="0">
 
             <tr>
               <td width="80%" ><label class="container"><b>DEMAN<input type="radio" name="o" value="DEMAN"><span class="checkmark"></span></label></td>
@@ -129,20 +132,20 @@
               <td><label class="container"><b>SAKIT JANTUNG<input type="radio" name="o" value="SAKIT JANTUNG"><span class="checkmark"></span></label></td>
             </tr>
             <tr>
-              <td><label class="container"><b>LAIN-LAIN <input type="radio" name="o"><span class="checkmark"></span></label></td>
+              <td><label class="container"><b>LAIN-LAIN<input type="radio" name="o" value="LAIN-LAIN"><span class="checkmark"></span></label></td>
             </tr>
           
             <tr>
               <td align="center" colspan="2">
-                 <div class="button1" input type="button" onclick="sick()" align="center" value='HANTAR'>
-                  HANTAR
-                 </div>   
+                 <div class="button1" input type="button" onclick="return add()" align="center" value='HANTAR'>HANTAR</div>  
               </td>
             </tr>
           </table>
           </form>   
 
         </font>
+
+
     </header>
 
 

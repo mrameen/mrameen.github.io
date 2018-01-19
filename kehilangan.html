@@ -36,9 +36,9 @@
 
   <script type="text/javascript">
 
-
+    var database = firebase.database();
     function add(){
-
+      
       var hh = "Null";
         if(document.frm.o[0].checked)
           {
@@ -69,7 +69,7 @@
                 }
         alert("Nama: "+name+"\r\n"+"Jenis Barang: "+hh);
 
-          var database = firebase.database();
+          
           var ref = database.ref('LAPORAN JEMAAH BARANG HILANG');
 
           var data = {
@@ -77,8 +77,10 @@
             STUFF: hh,
           }
           ref.push(data);
-          alert("Data anda telah disimpan didalam database");
-          window.location.replace("index.html");
+          if(data!=""){
+            alert("Data anda telah disimpan didalam database");
+            window.location.replace("index.html");
+          }
     }
 
   </script>
@@ -135,7 +137,7 @@
           
             <tr>
               <td align="center" colspan="2">
-                 <div class="button1" input type="button" onclick="add()" align="center" value='HANTAR'>HANTAR</div>  
+                 <div class="button1" input type="button" onclick="return add()" align="center" value='HANTAR'>HANTAR</div>  
               </td>
             </tr>
           </table>
