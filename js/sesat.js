@@ -15,7 +15,7 @@ map.addControl(new mapboxgl.GeolocateControl({
     },
     trackUserLocation: true
 }));
-
+var database = firebase.database();
 function getLocation(){
 if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
@@ -27,8 +27,6 @@ if (navigator.geolocation) {
       
       lat = position.coords.latitude;
       lon = position.coords.longitude;
-
-      var database = firebase.database();
 
       var ref = database.ref('SESAT');
 
