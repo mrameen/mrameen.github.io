@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map Calculate</title>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyCnUdAi1uTHwHbpr0gkZSifGh62W_ZkSp4" type="text/javascript"></script>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="row">
+	<div class="jumbotron">
+		<h3>Calculate the distance 2 places</h3>
+	</div>
+	<div class="col-md-6">
+
+	<form id="distance_form">
+		
+		<div class="form-group"><label>Origin: </label> <input class="form-control" id="from_places" placeholder="Enter a location" /> <input id="origin" name="origin" required="" type="hidden" /></div>
+
+		<div class="form-group"><label>Destination: </label> <input class="form-control" id="to_places" placeholder="Enter a location" /> <input id="destination" name="destination" required="" type="hidden" /></div>
+		
+		<input class="btn btn-primary" type="submit" value="Calculate" />
+	</form>
+
+		<br>
+
+		<div id="result">
+<ul class="list-group">
+            <li class="list-group-item d-flex justify-content between align-items-canter">
+                PRICE (RM) : 
+                <span id="price" class="badge badge-primary badge-pill"></span>
+            </li>
+            <!-- <li class="list-group-item d-flex justify-content between align-items-center">
+                Disntance in Mile:
+                <span id="in_mile" class="badge badge-primary badge-pill"></span>
+            </li> -->
+            <li class="list-group-item d-flex justify-content between align-items-center">
+                Distance in Kilometer:
+                <span id="in_kilo" class="badge badge-primary badge-pill"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content between align-items-center">
+                Estimed Time Arrival:
+                <span id="duration_text" class="badge badge-primary badge-pill"></span>
+            </li>
+            <!-- <li class="list-group-item d-flex justify-content between align-items-center">
+                Estimed Time Arrival (minutes):
+                <span id="duration_value" class="badge badge-primary badge-pill"></span>
+            </li> -->
+            <li class="list-group-item d-flex justify-content between align-items-center">
+                FROM:
+                <span id="from" class="badge badge-primary badge-pill"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content between align-items-canter">
+                TO:
+                <span id="to" class="badge badge-primary badge-pill"></span>
+            </li>
+        </ul>       
+</div>
+
+
+</div>
+</div>
+<script>
+	$(function() {
+        // add input listeners
+        google.maps.event.addDomListener(window, 'load', function () {
+            var from_places = new google.maps.places.Autocomplete(document.getElementById('from_places'));
+            var to_places = new google.maps.places.Autocomplete(document.getElementById('to_places'));
+
+            google.maps.event.addListener(from_places, 'place_changed', function () {
+                var from_place = from_places.getPlace();
+                var from_address = from_place.formatted_address;
+                $('#origin').val(from_address);
+            });
+
+            google.maps.event.addListener(to_places, 'place_changed', function () {
+                var to_place = to_places.getPlace();
+                var to_address = to_place.formatted_address;
+                $('#destination').val(to_address);
+            });
+
+        });
+        // calculate distance
+        function calculateDistance() {
+            var origin = $('#origin').val();
+            var destination = $('#destination').val();
+            var service = new google.maps.DistanceMatrixService();
+            service.getDistanceMatrix(
+                {
+                    origins: [origin],
+                    destinations: [destination],
+                    travelMode: google.maps.TravelMode.DRIVING,
+                    unitSystem: google.maps.UnitSystem.IMPERIAL, // miles and feet.
+                    // unitSystem: google.maps.UnitSystem.metric, // kilometers and meters.
+                    avoidHighways: false,
+                    avoidTolls: false
+                }, callback);
+        }
+        // get distance results
+        function callback(response, status) {
+            if (status != google.maps.DistanceMatrixStatus.OK) {
+                $('#result').html(err);
+            } else {
+                var origin = response.originAddresses[0];
+                var destination = response.destinationAddresses[0];
+                if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
+                    $('#result').html("Better get on a plane. There are no roads between "  + origin + " and " + destination);
+                } else {
+                    //alert('masuk');
+                    var distance = response.rows[0].elements[0].distance;
+                    var duration = response.rows[0].elements[0].duration;
+                    console.log(response.rows[0].elements[0].distance);
+                    var distance_in_kilo = distance.value / 1000; // the kilom
+                    var distance_in_mile = distance.value / 1609.34; // the mile
+                    var duration_text = duration.text;
+                    var duration_value = duration.value;
+                    var price = 0;
+                    var discount = 0;
+
+                    if(distance_in_kilo>=50)
+                    {
+                    	price = distance_in_kilo * 1.5;
+                    }
+                    else
+                    {
+                    	price = distance_in_kilo * 2;
+                    }
+
+                    $('#price').text(price.toFixed(2));
+                    $('#in_mile').text(distance_in_mile.toFixed(2));
+                    $('#in_kilo').text(distance_in_kilo.toFixed(2));
+                    $('#duration_text').text(duration_text);
+                    $('#duration_value').text(duration_value);
+                    $('#from').text(origin);
+                    $('#to').text(destination);
+                    //alert('Kilo: '+distance_in_kilo);
+                }
+            }
+        }
+        // print results on submit the form
+        $('#distance_form').submit(function(e){
+            e.preventDefault();
+            calculateDistance();
+        });
+
+    });
+</script>
+</div>
+<footer>
+ <small>&copy; Copyright mrameen_2018</small>
+</footer>
+
+</body>
+</html>
