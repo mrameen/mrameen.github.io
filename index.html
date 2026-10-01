@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ahmad Mustapha Ameen — Software Manager &amp; Consultant</title>
   <meta name="description" content="Ahmad Mustapha Ameen, software manager at Loranet and consultant for IoT platforms, smart traffic, and real-time dashboards.">
-  <meta name="theme-color" content="#171614">
+  <meta name="theme-color" content="#171614" id="theme-color-meta">
+  <meta name="theme-color" content="#171614" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f0e0d" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://mrameen.github.io/">
   <meta property="og:title" content="Ahmad Mustapha Ameen — Software Manager &amp; Consultant">
   <meta property="og:description" content="Software manager at Loranet and consultant for IoT, smart traffic, and live dashboards.">
@@ -16,7 +18,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    document.documentElement.classList.add("js");
+    (function () {
+      var t = localStorage.getItem("ameen-theme");
+      if (t === "night" || t === "signal") document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
 </head>
 <body>
   <canvas id="field" aria-hidden="true"></canvas>
@@ -36,9 +44,16 @@
             </div>
           </div>
         </div>
-        <div class="langs" role="group" data-i18n-aria="lang.group" aria-label="Language">
-          <button type="button" data-lang="en" aria-pressed="true">EN</button>
-          <button type="button" data-lang="ms" aria-pressed="false">BM</button>
+        <div class="prefs">
+          <div class="langs" role="group" data-i18n-aria="lang.group" aria-label="Language">
+            <button type="button" data-lang="en" aria-pressed="true">EN</button>
+            <button type="button" data-lang="ms" aria-pressed="false">BM</button>
+          </div>
+          <div class="themes" role="group" data-i18n-aria="theme.group" aria-label="Theme">
+            <button type="button" data-set-theme="paper" aria-pressed="true" data-i18n-aria="theme.paper" aria-label="Paper theme"><span class="swatch" style="--sw:#e7e2d8"></span></button>
+            <button type="button" data-set-theme="night" aria-pressed="false" data-i18n-aria="theme.night" aria-label="Night theme"><span class="swatch" style="--sw:#1a1917"></span></button>
+            <button type="button" data-set-theme="signal" aria-pressed="false" data-i18n-aria="theme.signal" aria-label="Signal theme"><span class="swatch" style="--sw:#0f2330"></span></button>
+          </div>
         </div>
       </div>
       <nav class="nav" data-i18n-aria="nav.label" aria-label="Sections">

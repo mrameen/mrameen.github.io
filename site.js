@@ -4,6 +4,10 @@ const copy = {
   en: {
     skip: "Skip to content",
     "lang.group": "Language",
+    "theme.group": "Theme",
+    "theme.paper": "Paper theme",
+    "theme.night": "Night theme",
+    "theme.signal": "Signal theme",
     "nav.label": "Sections",
     "nav.board": "Board",
     "nav.systems": "Systems",
@@ -152,6 +156,10 @@ const copy = {
   ms: {
     skip: "Langkau ke kandungan",
     "lang.group": "Bahasa",
+    "theme.group": "Tema",
+    "theme.paper": "Tema kertas",
+    "theme.night": "Tema malam",
+    "theme.signal": "Tema isyarat",
     "nav.label": "Bahagian",
     "nav.board": "Papan",
     "nav.systems": "Sistem",
@@ -456,6 +464,10 @@ function boot() {
 
   const state = {
     lang: localStorage.getItem("ameen-lang") === "ms" ? "ms" : "en",
+    theme: (function () {
+      const t = localStorage.getItem("ameen-theme");
+      return t === "night" || t === "signal" ? t : "paper";
+    })(),
     filter: "all",
     stage: "field",
     tool: "Python"
@@ -463,6 +475,17 @@ function boot() {
 
   function t(key) {
     return (copy[state.lang] && copy[state.lang][key]) || copy.en[key] || key;
+  }
+
+  function applyTheme() {
+    if (state.theme === "paper") document.documentElement.removeAttribute("data-theme");
+    else document.documentElement.setAttribute("data-theme", state.theme);
+    const meta = document.getElementById("theme-color-meta");
+    const color = getComputedStyle(document.documentElement).getPropertyValue("--theme-color").trim();
+    if (meta && color) meta.setAttribute("content", color);
+    document.querySelectorAll("[data-set-theme]").forEach((btn) => {
+      btn.setAttribute("aria-pressed", btn.dataset.setTheme === state.theme ? "true" : "false");
+    });
   }
 
   function applyCopy() {
@@ -572,6 +595,14 @@ function boot() {
     });
   });
 
+  document.querySelectorAll("[data-set-theme]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.theme = btn.dataset.setTheme;
+      localStorage.setItem("ameen-theme", state.theme);
+      applyTheme();
+    });
+  });
+
   document.querySelectorAll("[data-filter]").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.filter = btn.dataset.filter;
@@ -610,6 +641,7 @@ function boot() {
   });
 
   window.addEventListener("hashchange", () => renderView(true));
+  applyTheme();
   applyCopy();
   applyFilter();
   setInterval(tick, 1000);
@@ -650,9 +682,18 @@ function startField() {
     dots.length = count;
   }
 
+  function fieldRgb() {
+    const s = getComputedStyle(document.documentElement);
+    return {
+      ink: s.getPropertyValue("--field-ink-rgb").trim() || "23, 22, 20",
+      accent: s.getPropertyValue("--field-accent-rgb").trim() || "216, 106, 31"
+    };
+  }
+
   function draw() {
     if (!running) return;
     ctx.clearRect(0, 0, width, height);
+    const { ink, accent } = fieldRgb();
     const reach = 138;
     for (let i = 0; i < dots.length; i += 1) {
       const a = dots[i];
@@ -670,7 +711,7 @@ function startField() {
         if (dist < 170 && dist > 0) {
           a.x += (dx / dist) * 0.35;
           a.y += (dy / dist) * 0.35;
-          ctx.strokeStyle = "rgba(216, 106, 31, " + ((1 - dist / 170) * 0.55).toFixed(3) + ")";
+          ctx.strokeStyle = "rgba(" + accent + ", " + ((1 - dist / 170) * 0.55).toFixed(3) + ")";
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(mouse.x, mouse.y);
@@ -684,7 +725,7 @@ function startField() {
         const dy = a.y - b.y;
         const dist = Math.hypot(dx, dy);
         if (dist < reach) {
-          ctx.strokeStyle = "rgba(23, 22, 20, " + ((1 - dist / reach) * 0.2).toFixed(3) + ")";
+          ctx.strokeStyle = "rgba(" + ink + ", " + ((1 - dist / reach) * 0.2).toFixed(3) + ")";
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
@@ -692,14 +733,14 @@ function startField() {
         }
       }
 
-      ctx.fillStyle = "rgba(23, 22, 20, 0.62)";
+      ctx.fillStyle = "rgba(" + ink + ", 0.62)";
       ctx.beginPath();
       ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
       ctx.fill();
     }
 
     if (mouse.on) {
-      ctx.fillStyle = "rgba(216, 106, 31, 0.95)";
+      ctx.fillStyle = "rgba(" + accent + ", 0.95)";
       ctx.beginPath();
       ctx.arc(mouse.x, mouse.y, 2.6, 0, Math.PI * 2);
       ctx.fill();

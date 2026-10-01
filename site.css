@@ -1,4 +1,5 @@
-:root {
+:root,
+[data-theme="paper"] {
   --bg: #e7e2d8;
   --panel: #f7f4ee;
   --ink: #171614;
@@ -10,6 +11,49 @@
   --amber: #d86a1f;
   --green: #1f7a45;
   --paper: #f7f4ee;
+  --select-bg: #f0c9a8;
+  --field-ink-rgb: 23, 22, 20;
+  --field-accent-rgb: 216, 106, 31;
+  --theme-color: #171614;
+}
+
+[data-theme="night"] {
+  --bg: #1a1917;
+  --panel: #242320;
+  --ink: #f3efe6;
+  --muted: #a8a299;
+  --line: #3a3834;
+  --rail: #0f0e0d;
+  --rail-text: #f3efe6;
+  --rail-dim: #8a847a;
+  --amber: #e08840;
+  --green: #3fbf72;
+  --paper: #242320;
+  --select-bg: #5c4a38;
+  --field-ink-rgb: 168, 162, 153;
+  --field-accent-rgb: 224, 136, 64;
+  --theme-color: #0f0e0d;
+}
+
+[data-theme="signal"] {
+  --bg: #e4eaee;
+  --panel: #f4f8fa;
+  --ink: #0f2330;
+  --muted: #4a5f6d;
+  --line: #c5d0d8;
+  --rail: #0f2330;
+  --rail-text: #eef4f7;
+  --rail-dim: #9aadb8;
+  --amber: #0d7a6f;
+  --green: #1a8f5a;
+  --paper: #f4f8fa;
+  --select-bg: #b8ddd8;
+  --field-ink-rgb: 15, 35, 48;
+  --field-accent-rgb: 13, 122, 111;
+  --theme-color: #0f2330;
+}
+
+:root {
   --sans: "Familjen Grotesk", "Avenir Next", "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --rail-w: 248px;
@@ -45,7 +89,7 @@ a { color: inherit; }
   outline-offset: 2px;
 }
 
-::selection { background: #f0c9a8; color: var(--ink); }
+::selection { background: var(--select-bg); color: var(--ink); }
 
 #field {
   position: fixed;
@@ -186,6 +230,46 @@ h1 {
 .langs {
   display: flex;
   border: 1px solid #3a3834;
+  flex: 1;
+  min-width: 0;
+}
+
+.themes {
+  display: flex;
+  border: 1px solid #3a3834;
+  flex: 1;
+  min-width: 0;
+}
+
+.prefs {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.themes button {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  padding: 6px 0;
+  display: grid;
+  place-items: center;
+}
+
+.themes button[aria-pressed="true"] {
+  background: var(--rail-text);
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--sw);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.themes button[aria-pressed="true"] .swatch {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35);
 }
 
 .langs button {
@@ -704,7 +788,9 @@ textarea {
   }
   .who-copy { display: block; }
   .mark { display: none; }
+  .prefs { width: 100%; }
   .langs { flex-shrink: 0; }
+  .themes { flex-shrink: 0; }
   .langs { align-self: start; }
   .langs button { padding: 6px 12px; }
   h1 { font-size: 1.15rem; }
