@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ahmad Mustapha Ameen — Software Manager &amp; Consultant</title>
+  <meta name="description" content="Ahmad Mustapha Ameen, software manager at Loranet and consultant for IoT platforms, smart traffic, and real-time dashboards.">
+  <meta name="theme-color" content="#171614">
+  <link rel="canonical" href="https://mrameen.github.io/">
+  <meta property="og:title" content="Ahmad Mustapha Ameen — Software Manager &amp; Consultant">
+  <meta property="og:description" content="Software manager at Loranet and consultant for IoT, smart traffic, and live dashboards.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mrameen.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <canvas id="field" aria-hidden="true"></canvas>
+  <a class="skip" href="#content" data-i18n="skip">Skip to content</a>
+  <div class="shell">
+    <header class="rail">
+      <div class="rail-top">
+        <div class="who">
+          <img class="portrait" src="mrameen.jpeg" width="3392" height="4992" alt="Ahmad Mustapha Ameen">
+          <div class="who-copy">
+            <p class="mark" aria-hidden="true"><span></span><span></span><span class="on"></span></p>
+            <div>
+            <h1 translate="no">Ahmad Mustapha Ameen</h1>
+            <p class="role"><span data-i18n="rail.role">Software Manager</span><span data-i18n="rail.consult">Consultant</span></p>
+            <p class="sub" data-i18n="rail.sub">IoT · Full Stack · System Integration</p>
+            <!-- <p class="company"><a href="https://loranet.my/" target="_blank" rel="noopener noreferrer" translate="no" data-i18n-aria="rail.companyLink" aria-label="Loranet, opens in a new tab">Loranet</a></p> -->
+            </div>
+          </div>
+        </div>
+        <div class="langs" role="group" data-i18n-aria="lang.group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="ms" aria-pressed="false">BM</button>
+        </div>
+      </div>
+      <nav class="nav" data-i18n-aria="nav.label" aria-label="Sections">
+        <a href="#board" data-i18n="nav.board" aria-current="page">Board</a>
+        <a href="#systems" data-i18n="nav.systems">Systems</a>
+        <a href="#hire" data-i18n="nav.hire">Freelance</a>
+        <a href="#stack" data-i18n="nav.stack">Stack</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="rail-foot">
+        <p class="status"><span class="lamp" aria-hidden="true"></span> <span data-i18n="rail.status">Open for freelance</span></p>
+        <p class="quiet" data-i18n="rail.where">Selangor, Malaysia</p>
+        <a class="cv-link" href="cv.pdf" download data-i18n="rail.cv">Download CV</a>
+      </div>
+    </header>
+
+    <main id="content">
+      <div class="top">
+        <p class="crumb" id="crumb">Board</p>
+        <p class="clock" id="clock" data-i18n-aria="clock.label" aria-label="Time in Selangor">Selangor · MYT</p>
+      </div>
+
+      <section id="board" class="view is-active">
+        <h2 tabindex="-1" data-i18n="board.h">Operations, end to end</h2>
+        <div class="summary">
+          <p data-i18n="board.p1">Software Manager leading the development, deployment, and integration of IoT-based platforms, smart traffic solutions, and real-time data dashboards.</p>
+          <p data-i18n="board.p2">End-to-end delivery across backend systems and APIs, frontend interfaces, workflow automation, and service infrastructure. Hands-on with Python and Django, time-series data, MQTT device integration, containerised deployment on Linux, and domain routing with Traefik.</p>
+          <p data-i18n="board.p3">I also consult on those same layers.</p>
+          <p><span data-i18n="board.company">Current company</span> <a href="https://loranet.my/" target="_blank" rel="noopener noreferrer" translate="no" data-i18n-aria="rail.companyLink" aria-label="Loranet, opens in a new tab">Loranet</a></p>
+        </div>
+
+        <div class="stats">
+          <a class="stat" href="#systems">
+            <span class="stat-num" id="stat-systems">08</span>
+            <span data-i18n="stat.systems">Systems currently handling</span>
+          </a>
+          <a class="stat" href="#hire">
+            <span class="stat-num" id="stat-layers">06</span>
+            <span data-i18n="stat.layers">Layers you can hire</span>
+          </a>
+          <a class="stat" href="#contact">
+            <span class="stat-num">MY</span>
+            <span data-i18n="stat.place">Selangor · UTC+8</span>
+          </a>
+        </div>
+
+        <section class="panel" id="pipeline">
+          <h3 id="layers-title" data-i18n="board.layers">Follow a layer</h3>
+          <p class="note" data-i18n="board.layersLead">Select a layer. The note is the work I do there.</p>
+          <div class="pipeline" role="radiogroup" aria-labelledby="layers-title">
+            <div class="pipeline-row">
+              <button type="button" role="radio" data-stage="field" aria-checked="true"><span class="idx">01</span><span data-i18n="stage.field">Field</span></button>
+              <button type="button" role="radio" data-stage="link" aria-checked="false" tabindex="-1"><span class="idx">02</span><span data-i18n="stage.link">MQTT</span></button>
+              <button type="button" role="radio" data-stage="flows" aria-checked="false" tabindex="-1"><span class="idx">03</span><span data-i18n="stage.flows">Flows</span></button>
+              <button type="button" role="radio" data-stage="services" aria-checked="false" tabindex="-1"><span class="idx">04</span><span data-i18n="stage.services">API</span></button>
+              <button type="button" role="radio" data-stage="data" aria-checked="false" tabindex="-1"><span class="idx">05</span><span data-i18n="stage.data">Data</span></button>
+              <button type="button" role="radio" data-stage="view" aria-checked="false" tabindex="-1"><span class="idx">06</span><span data-i18n="stage.view">Screens</span></button>
+            </div>
+            <button type="button" class="host" role="radio" data-stage="run" aria-checked="false" tabindex="-1"><span class="idx">07</span><span data-i18n="stage.run">Host</span></button>
+          </div>
+          <div class="stage-detail" id="stage-detail">
+            <p class="kicker" id="stage-kicker">01 · Field</p>
+            <h4 id="stage-title">Lights, cameras, sensors</h4>
+            <p id="stage-body">The edge of the systems I deliver: traffic lights, cameras, and sensors.</p>
+          </div>
+        </section>
+
+        <section class="resp-wrap">
+          <h3 data-i18n="resp.title">What I handle</h3>
+          <div class="resp">
+            <h4 data-i18n="resp.backend.t">Backend &amp; API</h4>
+            <p data-i18n="resp.backend.b">REST APIs and backend services in Python and Django. Time-series and relational data in MongoDB, MySQL, Redis, and InfluxDB. Sensor and traffic data over MQTT.</p>
+            <h4 data-i18n="resp.front.t">Frontend &amp; visualization</h4>
+            <p data-i18n="resp.front.b">Interactive dashboards with HTML, JavaScript, Highcharts, and amCharts. Real-time monitoring with Grafana and Node-RED.</p>
+            <h4 data-i18n="resp.iot.t">IoT devices &amp; integration</h4>
+            <p data-i18n="resp.iot.b">ChirpStack for device infrastructure. Node-RED and MQTT microservices for traffic lights, cameras, and sensors. n8n for flexible, AI-assisted workflow automation.</p>
+            <h4 data-i18n="resp.ops.t">DevOps &amp; infrastructure</h4>
+            <p data-i18n="resp.ops.b">Docker on Linux, Traefik for domain routing and reverse proxy, Proxmox for virtualised hosting, Grafana for monitoring and alerts.</p>
+            <h4 data-i18n="resp.infer.t">Local inference</h4>
+            <p data-i18n="resp.infer.b">A 2-node DGX Spark cluster running DeepSeek with vLLM, set up for Hermes. Grafana watches the cluster.</p>
+            <h4 data-i18n="resp.plane.t">Delivery</h4>
+            <p data-i18n="resp.plane.b">Self-hosted Plane for progress, assignments, and coordination across engineering teams.</p>
+          </div>
+        </section>
+      </section>
+
+      <section id="systems" class="view">
+        <h2 tabindex="-1" data-i18n="systems.h">Systems in delivery</h2>
+        <p class="note" data-i18n="systems.note">These are systems I currently handle as Software Manager at Loranet. They are not listed as freelance clients.</p>
+        <div class="filter-bar">
+          <div class="filters" role="toolbar" data-i18n-aria="filters.label" aria-label="Filter systems">
+            <button type="button" data-filter="all" aria-pressed="true" data-i18n="filters.all">All</button>
+            <button type="button" data-filter="traffic" aria-pressed="false" data-i18n="filters.traffic">Traffic</button>
+            <button type="button" data-filter="city" aria-pressed="false" data-i18n="filters.city">Smart city</button>
+            <button type="button" data-filter="iot" aria-pressed="false" data-i18n="filters.iot">IoT</button>
+            <button type="button" data-filter="auto" aria-pressed="false" data-i18n="filters.auto">Automation</button>
+            <button type="button" data-filter="integration" aria-pressed="false" data-i18n="filters.integration">Integration</button>
+            <button type="button" data-filter="inference" aria-pressed="false" data-i18n="filters.inference">Inference</button>
+          </div>
+          <p class="shown" aria-live="polite"><span id="shown-count">8</span> <span data-i18n="systems.shown">shown</span></p>
+        </div>
+        <p id="none" class="note" hidden data-i18n="systems.none">Nothing in this filter.</p>
+        <div class="cards">
+          <article class="card" data-tags="traffic iot">
+            <p class="idx">01</p>
+            <p class="domain"><a href="https://react.net.my" target="_blank" rel="noopener noreferrer" data-i18n-aria="p.react.link" aria-label="react.net.my, opens in a new tab">react.net.my</a></p>
+            <h3 data-i18n="p.react.title">Traffic light &amp; IoT sensor system</h3>
+            <p data-i18n="p.react.body">Django-based platform for traffic lights and IoT sensors.</p>
+            <p class="tags"><span data-i18n="filters.traffic">Traffic</span><span data-i18n="filters.iot">IoT</span></p>
+            <p class="onrecord"><span data-i18n="card.stack">Named stack</span> Django</p>
+          </article>
+          <article class="card" data-tags="city">
+            <p class="idx">02</p>
+            <p class="domain"><a href="https://mpaj.react.net.my" target="_blank" rel="noopener noreferrer" data-i18n-aria="p.mpaj.link" aria-label="mpaj.react.net.my, opens in a new tab">mpaj.react.net.my</a></p>
+            <h3 data-i18n="p.mpaj.title">Smart city platform for MPAJ</h3>
+            <p data-i18n="p.mpaj.body">Smart city platform for the MPAJ municipality.</p>
+            <p class="tags"><span data-i18n="filters.city">Smart city</span></p>
+          </article>
+          <article class="card" data-tags="traffic">
+            <p class="idx">03</p>
+            <p class="domain"><a href="https://stl.kkr.gov.my" target="_blank" rel="noopener noreferrer" data-i18n-aria="p.stl.link" aria-label="stl.kkr.gov.my, opens in a new tab">stl.kkr.gov.my</a></p>
+            <h3 data-i18n="p.stl.title">Smart traffic light system for KKR</h3>
+            <p data-i18n="p.stl.body">Smart traffic light system for KKR Malaysia.</p>
+            <p class="tags"><span data-i18n="filters.traffic">Traffic</span></p>
+          </article>
+          <article class="card" data-tags="traffic iot auto">
+            <p class="idx">04</p>
+            <h3 data-i18n="p.nodered.title">Node-RED microservices</h3>
+            <p data-i18n="p.nodered.body">Traffic light control, sensor data, and camera systems.</p>
+            <p class="tags"><span data-i18n="filters.traffic">Traffic</span><span data-i18n="filters.iot">IoT</span><span data-i18n="filters.auto">Automation</span></p>
+            <p class="onrecord"><span data-i18n="card.stack">Named stack</span> Node-RED · MQTT</p>
+          </article>
+          <article class="card" data-tags="iot integration">
+            <p class="idx">05</p>
+            <h3 data-i18n="p.chirp.title">ChirpStack</h3>
+            <p data-i18n="p.chirp.body">IoT device communication and integration platform.</p>
+            <p class="tags"><span data-i18n="filters.iot">IoT</span><span data-i18n="filters.integration">Integration</span></p>
+            <p class="onrecord"><span data-i18n="card.stack">Named stack</span> ChirpStack</p>
+          </article>
+          <article class="card" data-tags="integration">
+            <p class="idx">06</p>
+            <h3 data-i18n="p.erp.title">ERP integration</h3>
+            <p data-i18n="p.erp.body">System-level ERP connections for smart infrastructure.</p>
+            <p class="tags"><span data-i18n="filters.integration">Integration</span></p>
+            <p class="onrecord"><span data-i18n="card.stack">Named stack</span> ERP</p>
+          </article>
+          <article class="card" data-tags="auto">
+            <p class="idx">07</p>
+            <h3 data-i18n="p.n8n.title">n8n workflows</h3>
+            <p data-i18n="p.n8n.body">AI-assisted process automation and data pipelines.</p>
+            <p class="tags"><span data-i18n="filters.auto">Automation</span></p>
+            <p class="onrecord"><span data-i18n="card.stack">Named stack</span> n8n</p>
+          </article>
+          <article class="card" data-tags="inference">
+            <p class="idx">08</p>
+            <h3 data-i18n="p.dgx.title">DGX Spark cluster for Hermes</h3>
+            <p data-i18n="p.dgx.body">Two DGX Spark nodes running DeepSeek on vLLM, set up for Hermes and watched in Grafana.</p>
+            <p class="tags"><span data-i18n="filters.inference">Inference</span></p>
+            <p class="onrecord"><span data-i18n="card.stack">Named stack</span> DGX Spark · vLLM · DeepSeek</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="hire" class="view">
+        <h2 tabindex="-1" data-i18n="hire.h">Hire a layer</h2>
+        <p class="note" data-i18n="hire.lead">Need a dashboard, a device network, an API, or the server it runs on? Hire me as a consultant for that layer. Same kind of work as the systems above.</p>
+        <div class="services">
+          <article class="service">
+            <p class="idx">01</p>
+            <div>
+              <h3 data-i18n="svc.iot.title">Device &amp; IoT integration</h3>
+              <p data-i18n="svc.iot.body">Connect lights, cameras, and sensors. MQTT and ChirpStack for the devices, Node-RED for the flows.</p>
+              <ul>
+                <li data-i18n="svc.iot.1">MQTT messaging and ChirpStack device setup</li>
+                <li data-i18n="svc.iot.2">Node-RED flows for lights, sensors, and cameras</li>
+              </ul>
+            </div>
+          </article>
+          <article class="service">
+            <p class="idx">02</p>
+            <div>
+              <h3 data-i18n="svc.dash.title">Real-time dashboards</h3>
+              <p data-i18n="svc.dash.body">Monitoring screens operators can use. Grafana, or a custom interface in HTML and JavaScript.</p>
+              <ul>
+                <li data-i18n="svc.dash.1">Grafana monitoring and alerts</li>
+                <li data-i18n="svc.dash.2">Custom screens with Highcharts and amCharts</li>
+              </ul>
+            </div>
+          </article>
+          <article class="service">
+            <p class="idx">03</p>
+            <div>
+              <h3 data-i18n="svc.back.title">Backend, APIs &amp; data</h3>
+              <p data-i18n="svc.back.body">Django services and REST APIs, with a store that matches the data: documents, tables, time series, or fast state.</p>
+              <ul>
+                <li data-i18n="svc.back.1">Django REST APIs</li>
+                <li data-i18n="svc.back.2">MongoDB, MySQL, InfluxDB, and Redis</li>
+              </ul>
+            </div>
+          </article>
+          <article class="service">
+            <p class="idx">04</p>
+            <div>
+              <h3 data-i18n="svc.erp.title">ERP integration</h3>
+              <p data-i18n="svc.erp.body">System-level connections so an operations platform can talk to an existing ERP.</p>
+              <ul>
+                <li data-i18n="svc.erp.1">Integration for smart infrastructure</li>
+                <li data-i18n="svc.erp.2">Scoped to the systems you already run</li>
+              </ul>
+            </div>
+          </article>
+          <article class="service">
+            <p class="idx">05</p>
+            <div>
+              <h3 data-i18n="svc.auto.title">Workflow automation</h3>
+              <p data-i18n="svc.auto.body">n8n pipelines and Node-RED flows, including AI-assisted steps where the process benefits.</p>
+              <ul>
+                <li data-i18n="svc.auto.1">Data pipelines and process automation</li>
+                <li data-i18n="svc.auto.2">AI-assisted steps when they earn a place</li>
+              </ul>
+            </div>
+          </article>
+          <article class="service">
+            <p class="idx">06</p>
+            <div>
+              <h3 data-i18n="svc.deploy.title">Deploy &amp; keep it routed</h3>
+              <p data-i18n="svc.deploy.body">Containerised apps on Linux, domains through Traefik, virtual hosts on Proxmox, alerts on Grafana.</p>
+              <ul>
+                <li data-i18n="svc.deploy.1">Docker on Linux servers</li>
+                <li data-i18n="svc.deploy.2">Traefik routing, Proxmox hosts, Grafana alerts</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <p class="note delivery-note" data-i18n="hire.plane">I also run delivery in self-hosted Plane: assignments, progress, and coordination. That comes with the work, it is not a separate product.</p>
+      </section>
+
+      <section id="stack" class="view">
+        <h2 tabindex="-1" data-i18n="stack.h">Tools I actually use</h2>
+        <p class="note" data-i18n="stack.lead">Select a tool. The note says where it sits in the work, using only what is on the CV.</p>
+        <div class="stack-layout">
+          <div class="tool-groups">
+            <section>
+              <h3 data-i18n="group.lang">Languages &amp; frameworks</h3>
+              <div class="tools">
+                <button type="button" class="tool" data-tool="Python" aria-pressed="true">Python</button>
+                <button type="button" class="tool" data-tool="Django" aria-pressed="false">Django</button>
+                <button type="button" class="tool" data-tool="JavaScript" aria-pressed="false">JavaScript</button>
+                <button type="button" class="tool" data-tool="HTML" aria-pressed="false">HTML</button>
+              </div>
+            </section>
+            <section>
+              <h3 data-i18n="group.data">Databases</h3>
+              <div class="tools">
+                <button type="button" class="tool" data-tool="MongoDB" aria-pressed="false">MongoDB</button>
+                <button type="button" class="tool" data-tool="MySQL" aria-pressed="false">MySQL</button>
+                <button type="button" class="tool" data-tool="InfluxDB" aria-pressed="false">InfluxDB</button>
+                <button type="button" class="tool" data-tool="Redis" aria-pressed="false">Redis</button>
+              </div>
+            </section>
+            <section>
+              <h3 data-i18n="group.iot">IoT &amp; integration</h3>
+              <div class="tools">
+                <button type="button" class="tool" data-tool="MQTT" aria-pressed="false">MQTT</button>
+                <button type="button" class="tool" data-tool="ChirpStack" aria-pressed="false">ChirpStack</button>
+                <button type="button" class="tool" data-tool="Node-RED" aria-pressed="false">Node-RED</button>
+                <button type="button" class="tool" data-tool="REST APIs" aria-pressed="false">REST APIs</button>
+                <button type="button" class="tool" data-tool="n8n" aria-pressed="false">n8n</button>
+                <button type="button" class="tool" data-tool="ERP" aria-pressed="false">ERP</button>
+              </div>
+            </section>
+            <section>
+              <h3 data-i18n="group.viz">Visualization</h3>
+              <div class="tools">
+                <button type="button" class="tool" data-tool="Grafana" aria-pressed="false">Grafana</button>
+                <button type="button" class="tool" data-tool="Highcharts" aria-pressed="false">Highcharts</button>
+                <button type="button" class="tool" data-tool="amCharts" aria-pressed="false">amCharts</button>
+              </div>
+            </section>
+            <section>
+              <h3 data-i18n="group.ops">DevOps &amp; infrastructure</h3>
+              <div class="tools">
+                <button type="button" class="tool" data-tool="Docker" aria-pressed="false">Docker</button>
+                <button type="button" class="tool" data-tool="Linux" aria-pressed="false">Linux</button>
+                <button type="button" class="tool" data-tool="Traefik" aria-pressed="false">Traefik</button>
+                <button type="button" class="tool" data-tool="Proxmox" aria-pressed="false">Proxmox</button>
+              </div>
+            </section>
+            <section>
+              <h3 data-i18n="group.infer">Inference</h3>
+              <div class="tools">
+                <button type="button" class="tool" data-tool="DGX Spark" aria-pressed="false">DGX Spark</button>
+                <button type="button" class="tool" data-tool="vLLM" aria-pressed="false">vLLM</button>
+                <button type="button" class="tool" data-tool="DeepSeek" aria-pressed="false">DeepSeek</button>
+              </div>
+            </section>
+            <section>
+              <h3 data-i18n="group.delivery">Delivery</h3>
+              <div class="tools">
+                <button type="button" class="tool" data-tool="Plane" aria-pressed="false">Plane</button>
+              </div>
+            </section>
+          </div>
+          <aside class="inspector" id="inspector" aria-live="polite">
+            <p class="kicker" id="inspector-group">Languages &amp; frameworks</p>
+            <h3 id="inspector-name">Python</h3>
+            <p id="inspector-body">Backend services, together with Django.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="contact" class="view">
+        <h2 tabindex="-1" data-i18n="contact.h">Start a conversation</h2>
+        <p class="note" data-i18n="contact.lead">WhatsApp, email, or call. References are available on request. The PDF is the original one-page CV. The DGX Spark cluster is on this board.</p>
+        <ul class="contact-list">
+          <li>
+            <span class="ico wa" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="#25D366" d="M12.04 2C6.58 2 2.15 6.4 2.15 11.83c0 1.74.46 3.44 1.34 4.94L2 22l5.39-1.41a10.1 10.1 0 0 0 4.65 1.12h.01c5.46 0 9.89-4.4 9.89-9.83C21.94 6.4 17.5 2 12.04 2z"/><path fill="#fff" d="M17.1 14.3c-.22.62-1.1 1.14-1.53 1.21-.39.07-.9.1-1.45-.09-.33-.12-.76-.25-1.31-.49-2.3-1-3.8-3.3-3.92-3.45-.11-.16-1-1.33-1-2.54 0-1.2.63-1.8.86-2.04.22-.24.49-.3.65-.3h.47c.15 0 .35-.06.55.42.22.53.74 1.84.8 1.97.07.13.11.29.02.46-.09.18-.14.29-.27.44-.13.16-.28.35-.4.47-.13.13-.27.27-.12.53.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.54.73 1.8.86.27.13.44.2.51.31.06.11.06.64-.16 1.26z"/></svg>
+            </span>
+            <div>
+              <span class="kicker" data-i18n="contact.waL">WhatsApp</span>
+              <a class="value" href="https://wa.me/60133262017" target="_blank" rel="noopener noreferrer" translate="no" data-i18n-aria="contact.waLink" aria-label="WhatsApp +60 13-326 2017">+60 13-326 2017</a>
+            </div>
+          </li>
+          <li>
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M4 7l8 6 8-6"/></svg>
+            </span>
+            <div>
+              <span class="kicker" data-i18n="contact.emailL">Email</span>
+              <a class="value" href="mailto:ameen@loranet.my" translate="no">ameen@loranet.my</a>
+            </div>
+          </li>
+          <li>
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V7l8-3.5L20 7v13"/><path d="M9 20v-4h6v4M9 9.5h.01M12 9.5h.01M15 9.5h.01M9 13h.01M12 13h.01M15 13h.01"/></svg>
+            </span>
+            <div>
+              <span class="kicker" data-i18n="contact.companyL">Company</span>
+              <a class="value" href="https://loranet.my/" target="_blank" rel="noopener noreferrer" translate="no" data-i18n-aria="rail.companyLink" aria-label="Loranet, opens in a new tab">loranet.my</a>
+            </div>
+          </li>
+          <li>
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s6.5-5.4 6.5-10.2a6.5 6.5 0 1 0-13 0C5.5 15.6 12 21 12 21z"/><circle cx="12" cy="10.6" r="2"/></svg>
+            </span>
+            <div>
+              <span class="kicker" data-i18n="contact.whereL">Location</span>
+              <span class="value" data-i18n="contact.where">Selangor, Malaysia</span>
+            </div>
+          </li>
+        </ul>
+        <a class="submit cv-btn" href="cv.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M12 11v6M9.5 14.5 12 17l2.5-2.5"/></svg><span data-i18n="contact.cv">Download the CV (PDF)</span></a>
+        <p class="note" data-i18n="contact.refs">References available upon request.</p>
+      </section>
+
+      <footer class="colophon">
+        <p><span data-i18n="footer">Ahmad Mustapha Ameen · Software Manager · Consultant</span> · <a href="https://loranet.my/" target="_blank" rel="noopener noreferrer" translate="no">Loranet</a></p>
+      </footer>
+    </main>
+  </div>
+  <script src="site.js"></script>
+</body>
+</html>

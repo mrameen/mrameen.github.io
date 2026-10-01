@@ -1,0 +1,14 @@
+---
+description: This repo is the owner's public GitHub portfolio (GitHub Pages)
+alwaysApply: true
+---
+
+# GitHub portfolio
+
+This project is the owner's public portfolio, published as a GitHub Pages site from `mrameen/mrameen.github.io`.
+
+- Treat every change as something a visitor and a recruiter will see on GitHub.
+- Keep the site presentable: clear structure, readable copy, and a layout that works on desktop and mobile.
+- Prefer a static site that GitHub Pages can serve from this repo (HTML, CSS, JS, or a static build committed for Pages).
+- Do not add private notes, credentials, or draft content that should not be public.
+- Match the owner's voice when they write in Malay; site copy can be English unless they ask otherwise.
