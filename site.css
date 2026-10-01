@@ -287,7 +287,7 @@ h3 {
   display: grid;
   gap: 10px;
   margin-top: 14px;
-  max-width: none;
+  max-width: 50%;
 }
 
 .summary p {
@@ -300,17 +300,7 @@ h3 {
 .note {
   margin-top: 8px;
   color: var(--muted);
-  max-width: none;
-  text-align: justify;
-  text-wrap: pretty;
-}
-
-.resp p,
-.card p:not(.idx):not(.domain):not(.tags):not(.onrecord),
-.service div > p,
-.service li,
-.stage-detail p,
-#inspector-body {
+  max-width: 50%;
   text-align: justify;
   text-wrap: pretty;
 }
@@ -728,6 +718,8 @@ textarea {
   .nav a { white-space: nowrap; padding: 6px 8px; font-size: 0.95rem; }
   h2, .brief { scroll-margin-top: 9rem; }
   main { padding: 18px 16px 48px; }
+  .summary,
+  .note { max-width: 100%; }
   .stats,
   .cards,
   .checks,
